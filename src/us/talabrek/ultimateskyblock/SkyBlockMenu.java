@@ -70,14 +70,14 @@ public class SkyBlockMenu {
         ItemMeta meta2 = sign.getItemMeta();
         meta2.setDisplayName("§hPlayer Permissions");
         lores.add("§eCliquez ici pour retourner");
-        lores.add("§ea la liste des membres.");
+        lores.add("§eà la liste des membres.");
         meta2.setLore(lores);
         sign.setItemMeta(meta2);
         menu.addItem(new ItemStack[]{sign});
         lores.clear();
         meta3.setDisplayName(pname + "'s Permissions");
         lores.add("§eSurvolez une icône pour afficher");
-        lores.add("§eune permission. Changer la");
+        lores.add("§eune permission. Changez la");
         lores.add("§epermission en cliquant dessus.");
         meta3.setLore(lores);
         pHead.setItemMeta(meta3);
@@ -102,12 +102,12 @@ public class SkyBlockMenu {
         meta2 = lock.getItemMeta();
         if (skyBlock.getIslandInfo(player).hasPerm(pname, "canToggleLock")) {
             meta2.setDisplayName("§aVerrouiller/déverrouiller l'île");
-            lores.add("§fCe joueur §apeut§f Verrouiller");
+            lores.add("§fCe joueur §apeut§f verrouiller");
             lores.add("§fou déverrouiller l'île.");
             lores.add("§fCliquez ici pour lui retirer cette permission.");
         } else {
             meta2.setDisplayName("§cVerrouiller/déverrouiller l'île");
-            lores.add("§fCe joueur §cne peut pas§f Verrouiller");
+            lores.add("§fCe joueur §cne peut pas§f verrouiller");
             lores.add("§fou déverrouiller l'île.");
             lores.add("§fCliquez ici pour lui ajouter cette permission");
         }
@@ -133,14 +133,14 @@ public class SkyBlockMenu {
         lores.clear();
         meta2 = warptoggle.getItemMeta();
         if (skyBlock.getIslandInfo(player).hasPerm(pname, "canToggleWarp")) {
-            meta2.setDisplayName("§aActiver/désactivé le warp de l'île.");
-            lores.add("§fCe joueur §apeut§f activé");
-            lores.add("§fou désactivé le warp de l'île.");
+            meta2.setDisplayName("§aActiver/désactiver le warp de l'île.");
+            lores.add("§fCe joueur §apeut§f activer");
+            lores.add("§fou désactiver le warp de l'île.");
             lores.add("§fCliquez ici pour lui retirer cette permission.");
         } else {
-            meta2.setDisplayName("§cActiver/désactivé le warp de l'île.");
+            meta2.setDisplayName("§cActiver/désactiver le warp de l'île.");
             lores.add("§fCe joueur §cne peut pas§f activer");
-            lores.add("§fou désactivé le warp de l'île.");
+            lores.add("§fou désactiver le warp de l'île.");
             lores.add("§fCliquez ici pour lui ajouter cette permission.");
         }
         meta2.setLore(lores);
@@ -151,12 +151,12 @@ public class SkyBlockMenu {
         if (skyBlock.getIslandInfo(player).hasPerm(pname, "canInviteOthers")) {
             meta2.setDisplayName("§aInviter d'autres joueurs à l'île.");
             lores.add("§fCe joueur §apeut§f inviter");
-            lores.add("§fd'autres joueurs a l'île.");
+            lores.add("§fd'autres joueurs à l'île.");
             lores.add("§fCliquez ici pour lui retirer cette permission.");
         } else {
             meta2.setDisplayName("§cInviter d'autres joueurs à l'île.");
             lores.add("§fCe joueur §cne peut pas§f inviter");
-            lores.add("§fd'autres joueurs a l'île.");
+            lores.add("§fd'autres joueurs à l'île.");
             lores.add("§fCliquez ici pour lui ajouter cette permission.");
         }
         meta2.setLore(lores);
@@ -193,7 +193,7 @@ public class SkyBlockMenu {
         meta2.setDisplayName("§aGroup Info");
         lores.add("Group Members: §2" + islandInfo.getPartySize() + "§7/§e" + islandInfo.getMaxPartySize());
         if (islandInfo.getPartySize() < islandInfo.getMaxPartySize()) {
-        	lores.add("§aD'autre joueurs peuvent être invités à cette île.");
+        	lores.add("§aD'autres joueurs peuvent être invités à cette île.");
         } else {
         	lores.add("§cVous avez atteint le nombre maximum de membres.");
         }
@@ -209,46 +209,46 @@ public class SkyBlockMenu {
             if (temp.equalsIgnoreCase(islandInfo.getLeader())) {
                 meta3.setDisplayName("§f" + temp);
     	        lores.add("§a§lChef");
-    	        lores.add("§aPeut §fChanger le biome de l'île.");
-    	        lores.add("§aPeut §fVerrouiller/déverrouiller l'île.");
-    	        lores.add("§aPeut §fDéfinir le warp de l'île.");
-    	        lores.add("§aPeut §fActiver/désactivé le warp de l'île.");
-    	        lores.add("§aPeut §fInviter d'autres joueurs à l'île.");
-    	        lores.add("§aPeut §fKick les autres membres de l'île.");
+    	        lores.add("§aPeut §fchanger le biome de l'île.");
+    	        lores.add("§aPeut §fverrouiller/déverrouiller l'île.");
+    	        lores.add("§aPeut §fdéfinir le warp de l'île.");
+    	        lores.add("§aPeut §factiver/désactiver le warp de l'île.");
+    	        lores.add("§aPeut §finviter d'autres joueurs à l'île.");
+    	        lores.add("§aPeut §fkick les autres membres de l'île.");
                 meta3.setLore(lores);
                 lores.clear();
             } else {
                 meta3.setDisplayName("§f" + temp);
     	        lores.add("§e§lMembre");
                 if (islandInfo.hasPerm(temp, "canChangeBiome")) {
-      	          lores.add("§aPeut §fChanger le biome de l'île.");
+      	          lores.add("§aPeut §fchanger le biome de l'île.");
                 } else {
       	          lores.add("§cNe peut pas §fchanger le biome de l'île.");
                 }
                 if (islandInfo.hasPerm(temp, "canToggleLock")) {
-      	          lores.add("§aPeut §fVerrouiller/déverrouiller l'île.");
+      	          lores.add("§aPeut §fverrouiller/déverrouiller l'île.");
                 } else {
-      	          lores.add("§cNe peut pas §fVerrouiller / déverrouiller l'île.");
+      	          lores.add("§cNe peut pas §fverrouiller/déverrouiller l'île.");
                 }
                 if (islandInfo.hasPerm(temp, "canChangeWarp")) {
-      	          lores.add("§aPeut §fDéfinir le warp de l'île.");
+      	          lores.add("§aPeut §fdéfinir le warp de l'île.");
                 } else {
-      	          lores.add("§cNe peut pas §fDéfinir le warp de l'île.");
+      	          lores.add("§cNe peut pas §fdéfinir le warp de l'île.");
                 }
                 if (islandInfo.hasPerm(temp, "canToggleWarp")) {
-      	          lores.add("§aPeut §fActiver/Désactivé le warp de l'île.");
+      	          lores.add("§aPeut §factiver/désactiver le warp de l'île.");
                 } else {
-      	          lores.add("§cNe peut pas §fActiver/désactivé le warp de l'île.");
+      	          lores.add("§cNe peut pas §factiver/désactiver le warp de l'île.");
                 }
                 if (islandInfo.hasPerm(temp, "canInviteOthers")) {
-      	          lores.add("§aPeut §fInviter d'autres joueurs à l'île.");
+      	          lores.add("§aPeut §finviter d'autres joueurs à l'île.");
                 } else {
-      	          lores.add("§cNe peut pas §fInviter d'autres joueurs à l'île.");
+      	          lores.add("§cNe peut pas §finviter d'autres joueurs à l'île.");
                 }
                 if (islandInfo.hasPerm(temp, "canKickOthers")) {
-      	          lores.add("§aPeut §fKick les autres membres de l'île.");
+      	          lores.add("§aPeut §fkick les autres membres de l'île.");
                 } else {
-      	          lores.add("§cNe peut pas §fKick les autres membres de l'île.");
+      	          lores.add("§cNe peut pas §fkick les autres membres de l'île.");
                 }
                 if (player.getName().equalsIgnoreCase(islandInfo.getLeader())) {
       	          lores.add("§e<Cliquez pour changer les permissions de ce joueur>");
@@ -302,22 +302,22 @@ public class SkyBlockMenu {
         meta4 = menuItem.getItemMeta();
         String currentBiome = skyBlock.getCurrentBiome(player);
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.ocean", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Ocean");
-            lores.add("§fLe biome de l'océan est le biome");
-            lores.add("§fbasique par defaut pour toutes les îles.");
-            lores.add("§fLes animeaux et les monstres");
+            meta4.setDisplayName("§aBiome: Océan");
+            lores.add("§fLe biome océan est le biome");
+            lores.add("§fbasique par défaut pour toutes les îles.");
+            lores.add("§fLes animaux et les monstres");
             lores.add("§fspawn normalement.");
             if ("OCEAN".equals(currentBiome)) {
                 lores.add("§2§lCeci est votre biome actuel.");
             } else {
-                lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+                lores.add("§c\u27A1 §e§lCliquez pour changer en biome océan.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Ocean");
-            lores.add("§cGrade Spécialiste et+.");
-            lores.add("§fLe biome de l'océan est le biome");
-            lores.add("§fbasique par defaut pour toutes les îles.");
-            lores.add("§fLes animeaux et les monstres");
+            meta4.setDisplayName("§8Biome: Océan");
+            lores.add("§cGrade Spécialiste et +.");
+            lores.add("§fLe biome océan est le biome");
+            lores.add("§fbasique par défaut pour toutes les îles.");
+            lores.add("§fLes animaux et les monstres");
             lores.add("§fspawn normalement.");
         }
         meta4.setLore(lores);
@@ -327,26 +327,23 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SAPLING, 1, (short) 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.forest", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Forest");
-            lores.add("§fLe biome forest:");
-            lores.add("§fLes animeaux et les monstres");
+            meta4.setDisplayName("§aBiome: Forêt");
+            lores.add("§fLe biome forêt:");
+            lores.add("§fLes animaux et les monstres");
             lores.add("§fspawn normalement.");
-            lores.add("§fet vous avez des loup qui.");
-            lores.add("§fspawn en plus.");
-            lores.add("§fspawn normally.");
+            lores.add("§fLes loups spawn désormais également.");
             if ("FOREST".equals(currentBiome)) {
           	  lores.add("§2§lCeci est votre biome actuel.");
             } else {
-                lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+                lores.add("§c\u27A1 §e§lCliquez pour changer en biome forêt.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Forest");
-            lores.add("§cGrade Spécialiste et+.");
-            lores.add("§fLe biome forest:");
-            lores.add("§fLes animeaux et les monstres");
+            meta4.setDisplayName("§8Biome: Forêt");
+            lores.add("§cGrade Spécialiste et +.");
+            lores.add("§fLe biome forêt:");
+            lores.add("§fLes animaux et les monstres");
             lores.add("§fspawn normalement.");
-            lores.add("§fet vous avez des loup.");
-            lores.add("§fqui spawn en plus.");
+            lores.add("§fLes loups spawn désormais également.");
         }
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
@@ -355,22 +352,22 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SAND, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.desert", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Desert");
-            lores.add("§fLe biome dezert:");
+            meta4.setDisplayName("§aBiome: Désert");
+            lores.add("§fLe biome désert:");
             lores.add("§fIl n'y a pas de pluie ni de neige");
-            lores.add("§fLes animeaux ne spawn pas");
+            lores.add("§fLes animaux ne spawn pas");
             lores.add("§fLes monstres spawn normalement.");
             if ("DESERT".equals(currentBiome)) {
           	  lores.add("§2§lCeci est votre biome actuel.");
             } else {
-                lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+                lores.add("§c\u27A1 §e§lCliquez pour changer en biome désert.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Desert");
-            lores.add("§cGrade Spécialiste et+.");
-            lores.add("§fLe biome dezert:");
+            meta4.setDisplayName("§8Biome: Désert");
+            lores.add("§cGrade Spécialiste et +.");
+            lores.add("§fLe biome désert:");
             lores.add("§fIl n'y a pas de pluie ni de neige");
-            lores.add("§fLes animeaux ne spawn pas");
+            lores.add("§fLes animaux ne spawn pas");
             lores.add("§fLes monstres spawn normalement.");
         }
         meta4.setLore(lores);
@@ -383,22 +380,22 @@ public class SkyBlockMenu {
             meta4.setDisplayName("§aBiome: Jungle");
             lores.add("§fLe biome jungle:");
             lores.add("§fBiome lumineux et coloré.");
-            lores.add("§fLes animeaux et les monstres");
-            lores.add("§fspawn normalement et vous avez");
-            lores.add("§fdes ocelots qui spawn en+.");
+            lores.add("§fLes animaux et les monstres");
+            lores.add("§fspawn normalement.");
+            lores.add("§fLes ocelots spawn désormais également.");
             if ("JUNGLE".equals(currentBiome)) {
             	lores.add("§2§lCeci est votre biome actuel.");
             } else {
-            	lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+            	lores.add("§c\u27A1 §e§lCliquez pour changer en biome jungle.");
             }
         } else {
             meta4.setDisplayName("§8Biome: Jungle");
-            lores.add("§cGrade Conseiller et+.");
+            lores.add("§cGrade Conseiller et +.");
             lores.add("§fLe biome jungle:");
             lores.add("§fBiome lumineux et coloré.");
-            lores.add("§fLes animeaux et les monstres");
-            lores.add("§fspawn normalement et vous avez");
-            lores.add("§fdes ocelots qui spawn en+.");
+            lores.add("§fLes animaux et les monstres");
+            lores.add("§fspawn normalement.");
+            lores.add("§fLes ocelots spawn désormais également.");
         }
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
@@ -407,28 +404,26 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.WATER_LILY, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.swampland", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Swampland");
-            lores.add("§fLe biome Marais:");
-            lores.add("§fBiome sombre et humide");
-            lores.add("§fLes animeaux et les monstres");
-            lores.add("§fspawn normalement et vous avez");
-            lores.add("§fdes petit slime qui spawn en+.");
-            lores.add("§favec une chance qui  varie.");
-            lores.add("§fselon la position de la lune.");
+            meta4.setDisplayName("§aBiome: Marais");
+            lores.add("§fLe biome marais:");
+            lores.add("§fBiome sombre et humide.");
+            lores.add("§fLes animaux et les monstres");
+            lores.add("§fspawn normalement.");
+            lores.add("§fLes slimes spawn désormais également");
+            lores.add("§fselon la postion de la lune");
             if ("SWAMPLAND".equals(currentBiome)) {
             	lores.add("§2§lCeci est votre biome actuel.");
             } else {
-            	lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+            	lores.add("§c\u27A1 §e§lCliquez pour changer en biome marais.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Swampland");
-            lores.add("§cGrade Conseiller et+.");
-            lores.add("§fLe biome Marais:");
-            lores.add("§fBiome sombre et humide");
-            lores.add("§fLes animeaux et les monstres");
-            lores.add("§fspawn normalement et vous avez");
-            lores.add("§fdes petit slime qui spawn en+.");
-            lores.add("§favec une chance qui  varie.");
+            meta4.setDisplayName("§8Biome: Marais");
+            lores.add("§cGrade Conseiller et +.");
+            lores.add("§fLe biome marais:");
+            lores.add("§fBiome sombre et humide.");
+            lores.add("§fLes animaux et les monstres");
+            lores.add("§fspawn normalement.");
+            lores.add("§fLes slimes spawn désormais également");
             lores.add("§fselon la position de la lune.");
         }
         meta4.setLore(lores);
@@ -438,27 +433,25 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SNOW, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.taiga", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Taiga");
-            lores.add("§fLe biome Taiga:");
-            lores.add("§fDans ce biome il neige");
-            lores.add("§fLes animeaux et les monstres");
+            meta4.setDisplayName("§aBiome: Taïga");
+            lores.add("§fLe biome taïga:");
+            lores.add("§fBiome avec de fortes chances de neige.");
+            lores.add("§fLes animaux et les monstres");
             lores.add("§fspawn normalement.");
-            lores.add("§fet vous avez des loup.");
-            lores.add("§fqui spawn en plus.");
+            lores.add("§fLes loups spawn désormais également.");
             if ("TAIGA".equals(currentBiome)) {
             	lores.add("§2§lCeci est votre biome actuel.");
             } else {
-            	lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+            	lores.add("§c\u27A1 §e§lCliquez pour changer en biome taïga.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Taiga");
-            lores.add("§cGrade Conseiller et+.");
-            lores.add("§fLe biome Taiga:");
-            lores.add("§fDans ce biome il neige");
-            lores.add("§fLes animeaux et les monstres");
+            meta4.setDisplayName("§8Biome: Taïga");
+            lores.add("§cGrade Conseiller et +.");
+            lores.add("§fLe biome taïga:");
+            lores.add("§fBiome avec de fortes chances de neige.");
+            lores.add("§fLes animaux et les monstres");
             lores.add("§fspawn normalement.");
-            lores.add("§fet vous avez des loup.");
-            lores.add("§fqui spawn en plus.");
+            lores.add("§fLes loups spawn désormais également.");
         }
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
@@ -467,26 +460,26 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.RED_MUSHROOM, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.mushroom", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Mushroom");
-            lores.add("§fLe biome Champignon:");
-            lores.add("§fBiome lumineux et coloré");
-            lores.add("§fMooshrooms sont les seuls");
-            lores.add("§fanimeaux qui spawn.");
-            lores.add("§fLes autres animeaux et monstres");
+            meta4.setDisplayName("§aBiome: Champignon");
+            lores.add("§fLe biome champignon:");
+            lores.add("§fBiome lumineux et coloré.");
+            lores.add("§fLes mooshrooms sont les seuls");
+            lores.add("§fanimaux qui spawn.");
+            lores.add("§fLes autres animaux et monstres");
             lores.add("§fne spawn plus!");
             if ("MUSHROOM".equals(currentBiome)) {
             	lores.add("§2§lCeci est votre biome actuel.");
             } else {
-            	lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+            	lores.add("§c\u27A1 §e§lCliquez pour changer en biome champignon.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Mushroom");
-            lores.add("§cGrade Expert et+.");
-            lores.add("§fLe biome Champignon:");
-            lores.add("§fBiome lumineux et coloré");
-            lores.add("§fMooshrooms sont les seuls");
-            lores.add("§fanimeaux qui spawn.");
-            lores.add("§fLes autres animeaux et monstres");
+            meta4.setDisplayName("§8Biome: Champignon");
+            lores.add("§cGrade Expert et +.");
+            lores.add("§fLe biome champignon:");
+            lores.add("§fBiome lumineux et coloré.");
+            lores.add("§fLes mooshrooms sont les seuls");
+            lores.add("§fanimaux qui spawn.");
+            lores.add("§fLes autres animaux et monstres");
             lores.add("§fne spawn plus!");
         }
         meta4.setLore(lores);
@@ -496,23 +489,23 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.NETHER_BRICK, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.hell", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Hell(Nether)");
-            lores.add("§fLe biome Nether:");
-            lores.add("§fbiome sombre et mort");
-            lores.add("§fIl n'y a pas de pluie ni de neige");
+            meta4.setDisplayName("§aBiome: Nether");
+            lores.add("§fLe biome nether:");
+            lores.add("§fbiome sombre et mort.");
+            lores.add("§fIl n'y a pas de pluie ni de neige.");
             lores.add("§fLes monstres du nether spawn");
             lores.add("§fsauf les ghasts et les blazes.");
             if ("HELL".equals(currentBiome)) {
             	lores.add("§2§lCeci est votre biome actuel.");
             } else {
-            	lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+            	lores.add("§c\u27A1 §e§lCliquez pour changer en biome nether.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Hell(Nether)");
-            lores.add("§cGrade Expert et+.");
-            lores.add("§fLe biome Nether:");
-            lores.add("§fbiome sombre et mort");
-            lores.add("§fIl n'y a pas de pluie ni de neige");
+            meta4.setDisplayName("§8Biome: Nether");
+            lores.add("§cGrade Expert et +.");
+            lores.add("§fLe biome nether:");
+            lores.add("§fbiome sombre et mort.");
+            lores.add("§fIl n'y a pas de pluie ni de neige.");
             lores.add("§fLes monstres du nether spawn");
             lores.add("§fsauf les ghasts et les blazes.");
         }
@@ -523,22 +516,22 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.EYE_OF_ENDER, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.sky", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Sky(End)");
+            meta4.setDisplayName("§aBiome: End");
             lores.add("§fLe biome End:");
-            lores.add("§fbiome avec un ciel sombre");
-            lores.add("§fseul les endermen spawn");
+            lores.add("§fbiome avec un ciel sombre.");
+            lores.add("§fSeul les endermen spawn");
             lores.add("§fdans ce biome.");
             if ("SKY".equals(currentBiome)) {
             	lores.add("§2§lCeci est votre biome actuel.");
             } else {
-            	lores.add("§c\u27A1 §e§lCliquez pour changer en ce biome.");
+            	lores.add("§c\u27A1 §e§lCliquez pour changer en biome End.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Sky(End)");
-            lores.add("§cGrade Expert et+.");
+            meta4.setDisplayName("§8Biome: End");
+            lores.add("§cGrade Expert et +.");
             lores.add("§fLe biome End:");
-            lores.add("§fbiome avec un ciel sombre");
-            lores.add("§fseul les endermen spawn");
+            lores.add("§fbiome avec un ciel sombre.");
+            lores.add("§fSeul les endermen spawn");
             lores.add("§fdans ce biome.");
         }
         meta4.setLore(lores);
@@ -750,14 +743,14 @@ public class SkyBlockMenu {
         List<String> lores = new ArrayList<>();
         ItemStack menuItem = new ItemStack(Material.GRASS, 1);
         ItemMeta meta4 = menuItem.getItemMeta();
-	      meta4.setDisplayName("§a§lCrée votre île");
+	      meta4.setDisplayName("§a§lCréer votre île");
 	      lores.add("§fCommencez votre aventure skyblock");
 	      lores.add("§fen créant votre propre île.");
 	      lores.add("§fRemplissez des challenges pour gagner");
-	      lores.add("§fdes items, des avantages,...");
-	      lores.add("§fVous pouvez inviter d'autre joueurs");
+	      lores.add("§fdes items, des avantages et bien plus!");
+	      lores.add("§fVous pouvez inviter d'autres joueurs");
 	      lores.add("§fpour partager avec vous la");
-	      lores.add("§fconstruction de votre empire!");
+	      lores.add("§fconstruction de votre Skyworld!");
 	      lores.add("§c\u27A1 §e§lCliquez ici pour commencer!");
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
@@ -766,7 +759,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
         final SkullMeta meta2 = (SkullMeta) menuItem.getItemMeta();
         meta2.setDisplayName("§a§lRejoindre une île");
-	      lores.add("§fEnvie de rejoindre l'île d'autre joueur?");
+	      lores.add("§fEnvie de rejoindre l'île d'autres joueurs?");
 	      lores.add("§e/island accept §fpour rejoindre.");
 	      lores.add("§e§l(Vous devez être invité en premier)");
         meta2.setLore(lores);
@@ -776,10 +769,10 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SIGN, 1);
         meta4 = menuItem.getItemMeta();
         meta4.setDisplayName("§a§lIsland Aide");
-	      lores.add("§fBesoin d`aide sur skyblock");
-	      lores.add("§fconcepts ou des commandes?");
-	      lores.add("§fTaper /island help ou.");
-	      lores.add("§e§lCliquez ici pour l`aide!");
+	      lores.add("§fBesoin d'aide avec les concepts");
+	      lores.add("§fdu Skyblock ou des commandes?");
+	      lores.add("§fTapez /island help ou");
+	      lores.add("§e§lCliquez ici pour l'aide!");
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.setItem(8, menuItem);
@@ -791,11 +784,11 @@ public class SkyBlockMenu {
         ItemStack menuItem = new ItemStack(Material.GRASS, 1);
         ItemMeta meta4 = menuItem.getItemMeta();
 	      meta4.setDisplayName("§6\u2739 §a§lIsland Home §6\u2739");
-	      lores.add("§fSe téléporter a votre île");
-	      lores.add("§fvous pouvez changer l'emplacement ");
+	      lores.add("§fSe téléporter à votre île.");
+	      lores.add("§fVous pouvez changer l'emplacement");
 	      lores.add("§fdu home de votre île");
 	      lores.add("§fen utilisant §b/island sethome");
-	      lores.add("§fou en utilisant le lit au dessous");
+	      lores.add("§fou en utilisant le lit au dessous.");
 	      lores.add("§c\u27A1 §e§lCliquez ici pour aller au home.");
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
@@ -809,7 +802,7 @@ public class SkyBlockMenu {
 	      meta4.setDisplayName("§d\u2764 §a§lChallenges §d\u2764");
 	      lores.add("§fAfficher la liste des challenges que");
 	      lores.add("§fvous pouvez compléter sur votre île");
-	      lores.add("§fpour gagner des items, avantages,..");
+	      lores.add("§fpour gagner des items, avantages et bien plus!");
         if (skyBlock.getChallengeLogic().isEnabled()) {
         	lores.add("§c\u27A1 §e§lCliquez ici pour voir les challenges.");
         } else {
@@ -826,7 +819,7 @@ public class SkyBlockMenu {
 	      lores.add("§eNiveau(level) actuel: §a" + islandInfo.getLevel());
 	      lores.add("§fGagner des levels en agrandissant");
 	      lores.add("§fvotre île, en remplissant");
-	      lores.add("§fcertains challenges. et en");
+	      lores.add("§fcertains challenges et en");
 	      lores.add("§frajoutant des blocs plus rares.");
 	      lores.add("§c\u27A1 §e§lCliquez ici pour actualiser");
         meta4.setLore(lores);
@@ -837,21 +830,21 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SKULL_ITEM, 1, (short) 3);
         final SkullMeta meta2 = (SkullMeta) menuItem.getItemMeta();
         meta2.setDisplayName("§5\u2720 §a§lIsland Group §5\u2720");
-        lores.add("§eMembers: §2" + islandInfo.getPartySize() + "/" + islandInfo.getMaxPartySize());
+        lores.add("§eMembres: §2" + islandInfo.getPartySize() + "/" + islandInfo.getMaxPartySize());
         
         
 	      if (!VaultHandler.checkPerk(player.getName(), "usb.party.create", player.getWorld()))
 	      {
 	        lores.add("§cVous devez avoir le grade");
-	        lores.add("§cTravailleur ou+ pour pouvoir inviter");
-	        lores.add("§cd'autres joueurs a votre île");
+	        lores.add("§cTravailleur ou + pour pouvoir inviter");
+	        lores.add("§cd'autres joueurs sur votre île");
 	      }
         
 	      lores.add("§fVoir les membres du groupe de");
-	      lores.add("§fvotre île et leurs permissions. si");
-	      lores.add("§fvous êtes le chef de l'île, vous pouvez");
+	      lores.add("§fvotre île et leurs permissions.");
+	      lores.add("§fSi vous êtes le chef de l'île, vous pouvez");
 	      lores.add("§fmodifier les permissions des membres.");
-	      lores.add("§f/island invite <joueur> pour inviter quelquin");
+	      lores.add("§f/island invite <joueur> pour inviter quelqu'un.");
 	      lores.add("§c\u27A1 §e§lCliquez ici pour consulter ou modifier.");
 	      
         meta2.setLore(lores);
@@ -880,23 +873,23 @@ public class SkyBlockMenu {
         meta4 = menuItem.getItemMeta();
         meta4.setDisplayName("§4\u2588 §a§lIsland Lock §4\u2588");
         if (skyBlock.getIslandInfo(player).isLocked()) {
-	        lores.add("§eVerouillage(Lock) Status: §aActive");
-	        lores.add("§fVotre île est actuellement §7Verouiller.");
+	        lores.add("§eVerouillage(Lock) Status: §aActif");
+	        lores.add("§fVotre île est actuellement §7verouillée.");
 	        lores.add("§fLes joueurs qui ne sont pas de votre groupe");
-	        lores.add("§fsont interdit d'entrer/tp dans votre île.");
+	        lores.add("§fsont interdits d'entrer/tp dans votre île.");
             if (islandInfo.hasPerm(player, "canToggleLock")) {
             	lores.add("§c\u27A1 §e§lCliquez ici pour déverouiller votre île.");
             } else {
             	lores.add("§c§lVous ne pouvez pas changer le verouillage.");
             }
         } else {
-	        lores.add("§eVerouillage(Lock) Status: §8Inactive");
-	        lores.add("§fVotre île est actuellement §adéverouiller.");
+	        lores.add("§eVerouillage(Lock) Status: §8Inactif");
+	        lores.add("§fVotre île est actuellement §adéverouillée.");
 	        lores.add("§fLes joueurs qui ne sont pas de votre groupe");
-	        lores.add("§fpeuvent entrer/tp dans votre île, seulement");
-	        lores.add("§fvous et votre groupe sont autorisé a build.");
+	        lores.add("§fpeuvent entrer/tp dans votre île mais seulement");
+	        lores.add("§fvous et votre groupe êtes autorisés à build.");
             if (islandInfo.hasPerm(player, "canToggleLock")) {
-  	          lores.add("§c\u27A1 §e§lCliquez ici pour Verouiller votre île.");
+  	          lores.add("§c\u27A1 §e§lCliquez ici pour verouiller votre île.");
             } else {
   	          lores.add("§c§lVous ne pouvez pas changer le verouillage.");
             }
@@ -910,12 +903,12 @@ public class SkyBlockMenu {
             menuItem = new ItemStack(Material.ENDER_PORTAL_FRAME, 1);
             meta4 = menuItem.getItemMeta();
 	        meta4.setDisplayName("§e\u2739 §a§lIsland Warp §e\u2739");
-	        lores.add("§eWarp Status: §aActive");
+	        lores.add("§eWarp Status: §aActif");
 	        lores.add("§fD'autres joueurs peuvent visiter");
 	        lores.add("§fvotre île avec le warp que vous");
-	        lores.add("§favez défini à l'aide §d/island setwarp.");
+	        lores.add("§favez défini à l'aide de §d/island setwarp.");
             if (islandInfo.hasPerm(player, "canToggleWarp") && VaultHandler.checkPerk(player.getName(), "usb.extra.addwarp", uSkyBlock.getSkyBlockWorld())) {
-  	          lores.add("§c\u27A1 §e§lCliquez ici pour désactiver.");
+  	          lores.add("§c\u27A1 §e§lCliquez ici pour le désactiver.");
             } else {
   	          lores.add("§c§lVous ne pouvez pas changer le warp.");
             }
@@ -923,7 +916,7 @@ public class SkyBlockMenu {
             menuItem = new ItemStack(Material.ENDER_STONE, 1);
             meta4 = menuItem.getItemMeta();
 	        meta4.setDisplayName("§e\u2739 §a§lIsland Warp §e\u2739");
-	        lores.add("§eWarp Status: §8Inactive");
+	        lores.add("§eWarp Status: §8Inactif");
 	        lores.add("§fD'autres joueurs ne peuvent pas visiter");
 	        lores.add("§fvotre île à avec le warp parce que vous");
 	        lores.add("§fn'avez pas encore défini le warp");
@@ -944,8 +937,8 @@ public class SkyBlockMenu {
         meta4 = menuItem.getItemMeta();
 	      meta4.setDisplayName("§4\u2714 §a§lIsland Log §4\u2714");
 	      lores.add("§fAfficher les log des événements de");
-	      lores.add("§fvotre île comme membre a changer,");
-	      lores.add("§fun biome, un warp...");
+	      lores.add("§fvotre île comme les changements");
+	      lores.add("§fde biome, de warp ou autre.");
 	      lores.add("§c\u27A1 §e§lCliquez ici pour afficher les logs.");
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
@@ -955,10 +948,10 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.BED, 1);
         meta4 = menuItem.getItemMeta();
 	      meta4.setDisplayName("§a§lChanger la position de votre home");
-	      lores.add("§fLorsque vous téléporter à votre");
-	      lores.add("§fîle, vous serez amené à");
+	      lores.add("§fLorsque vous vous téléportez à votre");
+	      lores.add("§fîle, vous serez amenés à");
 	      lores.add("§fcet emplacement.");
-	      lores.add("§c\u27A1 §e§lCliquez ici pour changer.");
+	      lores.add("§c\u27A1 §e§lCliquez ici pour le changer.");
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.setItem(9, menuItem); // First item, 2nd line
@@ -969,9 +962,9 @@ public class SkyBlockMenu {
 	      meta4.setDisplayName("§a§lChanger la position de votre warp");
 	      lores.add("§fLorsque votre warp est activé,");
 	      lores.add("§fles autres joueurs auront la possibilité");
-	      lores.add("§fde se téléporter a ce point");
+	      lores.add("§fde se téléporter à ce point");
 	      lores.add("§fde votre île.");
-	      lores.add("§c\u27A1 §e§lCliquez ici pour changer.");
+	      lores.add("§c\u27A1 §e§lCliquez ici pour le changer.");
         meta4.setLore(lores);
         menuItem.setItemMeta(meta4);
         menu.setItem(10, menuItem);
@@ -993,7 +986,7 @@ public class SkyBlockMenu {
 	      menuItem = new ItemStack(Material.EYE_OF_ENDER, 1);
 	      meta4 = menuItem.getItemMeta();
 	      meta4.setDisplayName("§6End");
-	      lores.add("Aller a l'end.");
+	      lores.add("Aller à l'end.");
 	      meta4.setLore(lores);
 	      menuItem.setItemMeta(meta4);
 	      menu.setItem(21, menuItem);
@@ -1006,7 +999,7 @@ public class SkyBlockMenu {
 	      meta4 = menuItem.getItemMeta();
 	      meta4.setDisplayName("§6§lDéguisement");
 	      lores.add("Se déguiser en mob,");
-	      lores.add("block et joueur:D");
+	      lores.add("block ou joueurs! :D");
 	      meta4.setLore(lores);
 	      menuItem.setItemMeta(meta4);
 	      menu.setItem(30, menuItem);
@@ -1017,8 +1010,8 @@ public class SkyBlockMenu {
 	      menuItem = new ItemStack(Material.REDSTONE, 1);
 	      meta4 = menuItem.getItemMeta();
 	      meta4.setDisplayName("§5§lWiEffect");
-	      lores.add("§fFaire apparaitre des");
-	      lores.add("§fparticules autour de vous");
+	      lores.add("§fFaire apparaître des");
+	      lores.add("§fparticules autour de vous!");
 	      meta4.setLore(lores);
 	      menuItem.setItemMeta(meta4);
 	      menu.setItem(31, menuItem);
@@ -1044,7 +1037,7 @@ public class SkyBlockMenu {
 	      menuItem = new ItemStack(Material.EMERALD, 1);
 	      meta4 = menuItem.getItemMeta();
 	      meta4.setDisplayName("§a§lGrades");
-	      lores.add("§fDisponible au spawn");
+	      lores.add("§fDisponibles au spawn");
 	      meta4.setLore(lores);
 	      menuItem.setItemMeta(meta4);
 	      menu.setItem(36, menuItem);
@@ -1056,7 +1049,7 @@ public class SkyBlockMenu {
 	      menuItem = new ItemStack(Material.WOOD_DOOR, 1);
 	      meta4 = menuItem.getItemMeta();
 	      meta4.setDisplayName("§6§lRetour au spawn");
-	      lores.add("§c\u27A1 §e§lCliquez ici pour!");
+	      lores.add("§c\u27A1 §e§lCliquez ici pour");
 	      lores.add("    §e§laller au spawn!");
 	      meta4.setLore(lores);
 	      menuItem.setItemMeta(meta4);
@@ -1341,13 +1334,13 @@ public class SkyBlockMenu {
            	 if(playerInfo.checkChallenge("enfer") > 0) {
            		World nether = Bukkit.getWorld("world_nether");
            		p.teleport(nether.getSpawnLocation());
-           	 } else p.sendMessage(ChatColor.RED + "Vous devez avoir le challenge Enfer pour pouvoir aller dans le nether");
+           	 } else p.sendMessage(ChatColor.RED + "Vous devez avoir réussi le challenge 'Enfer' pour pouvoir aller dans le Nether");
             } else if (event.getCurrentItem().getType() == Material.EYE_OF_ENDER) {
             	p.closeInventory();
               	 if(playerInfo.checkChallenge("theend") > 0) {
                 		World end = Bukkit.getWorld("world_the_end");
                 		p.teleport(end.getSpawnLocation());
-                	 } else p.sendMessage(ChatColor.RED + "Vous devez avoir le challenge TheEnd pour pouvoir aller dans l'end");
+                	 } else p.sendMessage(ChatColor.RED + "Vous devez avoir réussi le challenge 'The End' pour pouvoir aller dans l'End");
             } else {
                 if (!isExtraMenuAction(p, event.getCurrentItem())) {
                     p.closeInventory();
@@ -1410,7 +1403,7 @@ public class SkyBlockMenu {
       currenteffectItem = new ItemStack(Material.ENDER_PORTAL_FRAME, 1);
       ItemMeta meta1 = currenteffectItem.getItemMeta();
       meta1.setDisplayName("§3\u2739 §e§lSmoke §3\u2739");
-      lores.add("§fEffect Fumé");
+      lores.add("§fEffect fumée");
       lores.add("§2Travailleur et +");
       meta1.setLore(lores);
       currenteffectItem.setItemMeta(meta1);
@@ -1499,7 +1492,7 @@ public class SkyBlockMenu {
       currenteffectItem = new ItemStack(Material.SNOW_BALL, 1);
       ItemMeta metac4 = currenteffectItem.getItemMeta();
       metac4.setDisplayName("§3\u2739 §e§lSnow §3\u2739");
-      lores.add("§fEffect boules de nieges");
+      lores.add("§fEffect boules de neige");
       lores.add("§1Conseiller et +");
       metac4.setLore(lores);
       currenteffectItem.setItemMeta(metac4);
@@ -1534,7 +1527,7 @@ public class SkyBlockMenu {
       currenteffectItem = new ItemStack(Material.JUKEBOX, 1);
       ItemMeta metae3 = currenteffectItem.getItemMeta();
       metae3.setDisplayName("§3\u2739 §e§lMusic §3\u2739");
-      lores.add("§fEffect music");
+      lores.add("§fEffect musique");
       lores.add("§dExpert et +");
       metae3.setLore(lores);
       currenteffectItem.setItemMeta(metae3);
@@ -1545,7 +1538,7 @@ public class SkyBlockMenu {
       currenteffectItem = new ItemStack(Material.ENCHANTMENT_TABLE, 1);
       ItemMeta metae4 = currenteffectItem.getItemMeta();
       metae4.setDisplayName("§3\u2739 §e§lMagic §3\u2739");
-      lores.add("§fEffect magic");
+      lores.add("§fEffect magique");
       lores.add("§dExpert et +");
       metae4.setLore(lores);
       currenteffectItem.setItemMeta(metae4);
@@ -1594,7 +1587,7 @@ public class SkyBlockMenu {
     
     public Inventory displaydisgGUI(Player player)
     {
-      GUIdisg = Bukkit.createInventory(null, 45, "§6Déguisement");
+      GUIdisg = Bukkit.createInventory(null, 45, "§6Déguisements");
       
       currentdisgItem = new ItemStack(Material.MONSTER_EGG, 1, (short)65);
       ItemMeta meta1 = currentdisgItem.getItemMeta();
@@ -1617,7 +1610,7 @@ public class SkyBlockMenu {
       
       currentdisgItem = new ItemStack(Material.MONSTER_EGG, 1, (short)59);
       ItemMeta meta3 = currentdisgItem.getItemMeta();
-      meta3.setDisplayName("Araignée bleu");
+      meta3.setDisplayName("Araignée bleue");
       lores.add("§1Conseiller et +");
       meta3.setLore(lores);
       currentdisgItem.setItemMeta(meta3);
@@ -1706,7 +1699,7 @@ public class SkyBlockMenu {
       
       currentdisgItem = new ItemStack(Material.MONSTER_EGG, 1, (short)62);
       ItemMeta meta11 = currentdisgItem.getItemMeta();
-      meta11.setDisplayName("Cube de magma");
+      meta11.setDisplayName("Magma Cube");
       lores.add("§1Conseiller et +");
       meta11.setLore(lores);
       currentdisgItem.setItemMeta(meta11);
@@ -1715,7 +1708,7 @@ public class SkyBlockMenu {
       
       currentdisgItem = new ItemStack(Material.MONSTER_EGG, 1, (short)96);
       ItemMeta meta12 = currentdisgItem.getItemMeta();
-      meta12.setDisplayName("Mushroom");
+      meta12.setDisplayName("Mooshroom");
       lores.add("§1Conseiller et +");
       meta12.setLore(lores);
       currentdisgItem.setItemMeta(meta12);
@@ -1745,7 +1738,7 @@ public class SkyBlockMenu {
       
       currentdisgItem = new ItemStack(Material.MONSTER_EGG, 1, (short)57);
       ItemMeta meta15 = currentdisgItem.getItemMeta();
-      meta15.setDisplayName("Cochon zombie");
+      meta15.setDisplayName("Zombie Pigman");
       lores.add("§1Conseiller et +");
       meta15.setLore(lores);
       currentdisgItem.setItemMeta(meta15);
@@ -1805,7 +1798,7 @@ public class SkyBlockMenu {
       
       currentdisgItem = new ItemStack(Material.MONSTER_EGG, 1, (short)94);
       ItemMeta meta21 = currentdisgItem.getItemMeta();
-      meta21.setDisplayName("Calamar");
+      meta21.setDisplayName("Poulpe");
       lores.add("§dExpert et +");
       meta21.setLore(lores);
       currentdisgItem.setItemMeta(meta21);
@@ -1923,7 +1916,7 @@ public class SkyBlockMenu {
 
       currentdisgItem = new ItemStack(Material.STONE_SWORD, 1);
       ItemMeta metae = currentdisgItem.getItemMeta();
-      metae.setDisplayName("Supprimer le dégisement");
+      metae.setDisplayName("Supprimer le déguisement");
       lores.add("");
       metae.setLore(lores);
       currentdisgItem.setItemMeta(metae);
@@ -1933,7 +1926,7 @@ public class SkyBlockMenu {
       
       currentdisgItem = new ItemStack(Material.SIGN, 1);
       ItemMeta metar = currentdisgItem.getItemMeta();
-      metar.setDisplayName("§bDégisement");
+      metar.setDisplayName("§bDéguisement");
       lores.add("§eCliquez ici pour retourner");
       lores.add("§eau menu principal.");
       metar.setLore(lores);
