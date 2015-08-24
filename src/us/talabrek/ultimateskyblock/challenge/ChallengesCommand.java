@@ -31,7 +31,7 @@ public class ChallengesCommand implements CommandExecutor, TabCompleter {
             return false;
         }
         if (!plugin.getChallengeLogic().isEnabled()) {
-            sender.sendMessage(tr("\u00a7eChallenges has been disabled. Contact an administrator."));
+            sender.sendMessage(tr("\u00a7eLes challenges ont été désactivés. Merci de contacter un administrateur."));
             return false;
         }
         final Player player = (Player)sender;
@@ -57,24 +57,24 @@ public class ChallengesCommand implements CommandExecutor, TabCompleter {
             if (arg.equals("help") || arg.equals("complete") || arg.equals("c")) {
                 player.sendMessage(tr("\u00a7eTapez /c <nom> afficher des informations sur un challenge."));
                 player.sendMessage(tr("\u00a7eTapez /c complete <nom> tenter de compléter ce challenge."));
-                player.sendMessage(tr("\u00a7e==>Challenges auront des couleurs différentes en fonction de si elles sont:"));
-                player.sendMessage(challengeLogic.defaults.challengeColor + "Incomplete " + challengeLogic.defaults.finishedColor + "Complete(non répétable) " + challengeLogic.defaults.repeatableColor + "Complete(répétable) ");
+                player.sendMessage(tr("\u00a7e==>Les challenges auront des couleurs différentes en fonction de si ils sont:"));
+                player.sendMessage(challengeLogic.defaults.challengeColor + "Non completés " + challengeLogic.defaults.finishedColor + "Completés(non répétable) " + challengeLogic.defaults.repeatableColor + "Completés(répétable) ");
             } else if (challenge != null && challenge.getRank().isAvailable(playerInfo)) {
                 player.sendMessage("\u00a7eNom du challenge:: " + ChatColor.WHITE + arg.toLowerCase());
                 player.sendMessage("\u00a7e" + challenge.getDescription());
                 if (challenge.getType() == Challenge.Type.PLAYER) {
                     if (challenge.isTakeItems()) {
-                        player.sendMessage(tr("\u00a74Vous perdrez tous les éléments nécessaires lorsque vous remplissez ce challenge!"));
+                        player.sendMessage(tr("\u00a74Vous perdrez tous les éléments requis lorsque vous remplissez ce challenge!"));
                     }
                 } else if (challenge.getType() == Challenge.Type.ISLAND) {
-                    player.sendMessage(tr("\u00a74Tous les éléments requis doivent être sur votre île avec un rayon de " + challenge.getRadius() + " de vous!"));
+                    player.sendMessage(tr("\u00a74Tous les éléments requis doivent être sur votre île dans un rayon de " + challenge.getRadius() + " de vous!"));
                 }
                 if (challengeLogic.getRanks().size() > 1) {
                     player.sendMessage("\u00a7eRank: " + ChatColor.WHITE + challenge.getRank());
                 }
                 ChallengeCompletion completion = playerInfo.getChallenge(arg);
                 if (completion.getTimesCompleted() > 0 && !challenge.isRepeatable()) {
-                    player.sendMessage(tr("\u00a74Ce Challenge n'est pas répétable!"));
+                    player.sendMessage(tr("\u00a74Ce challenge n'est pas répétable!"));
                     return true;
                 }
                 ItemStack item = challenge.getDisplayItem(completion, challengeLogic.defaults.enableEconomyPlugin);
