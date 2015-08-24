@@ -741,12 +741,12 @@ public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI {
             }
             if (homeSweetHome == null) {
                 player.performCommand("spawn");
-                player.sendMessage(tr("\u00a74Vous ne faites pas partie d`une île. Vous retourner a la zone de spawn!"));
+                player.sendMessage(tr("\u00a74Vous ne faites partie d'aucune île. Retour au spawn!"));
                 return true;
             }
             removeCreatures(homeSweetHome);
             safeTeleport(player, homeSweetHome);
-            player.sendMessage(tr("\u00a7aTéléportation sur votre île."));
+            player.sendMessage(tr("\u00a7aTéléportation à votre île."));
             return true;
         } finally {
             getLogger().exiting(CN, "homeTeleport");
@@ -771,7 +771,7 @@ public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI {
             return true;
         }
         safeTeleport(player, warpSweetWarp);
-        player.sendMessage(tr("\u00a7aTéléportation sur île de " + pi.getPlayerName() + "."));
+        player.sendMessage(tr("\u00a7aTéléportation sur l'île de " + pi.getPlayerName() + "."));
         return true;
     }
 
@@ -1072,29 +1072,51 @@ public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI {
         setBiome(loc, biome);
         return biome != Biome.OCEAN;
     }
-
+//TO DO: test the plugin on the server with the new biome denomination.
     public Biome getBiome(String bName) {
         Biome biome;
+        //if (bName.equalsIgnoreCase("jungle")) {
+            //biome = Biome.JUNGLE;
         if (bName.equalsIgnoreCase("jungle")) {
             biome = Biome.JUNGLE;
-        } else if (bName.equalsIgnoreCase("hell")) {
+        //} else if (bName.equalsIgnoreCase("hell")) {
+            //biome = Biome.HELL;
+        } else if (bName.equalsIgnoreCase("nether")) {
             biome = Biome.HELL;
-        } else if (bName.equalsIgnoreCase("sky")) {
+        //} else if (bName.equalsIgnoreCase("sky")) {
+            //biome = Biome.SKY;
+        } else if (bName.equalsIgnoreCase("end")) {
             biome = Biome.SKY;
-        } else if (bName.equalsIgnoreCase("mushroom")) {
+        //} else if (bName.equalsIgnoreCase("mushroom")) {
+            //biome = Biome.MUSHROOM_ISLAND;
+        } else if (bName.equalsIgnoreCase("champignon")) {
             biome = Biome.MUSHROOM_ISLAND;
+        //} else if (bName.equalsIgnoreCase("ocean")) {
+            //biome = Biome.OCEAN;
         } else if (bName.equalsIgnoreCase("ocean")) {
             biome = Biome.OCEAN;
-        } else if (bName.equalsIgnoreCase("swampland")) {
+        //} else if (bName.equalsIgnoreCase("swampland")) {
+            //biome = Biome.SWAMPLAND;
+        } else if (bName.equalsIgnoreCase("marais")) {
             biome = Biome.SWAMPLAND;
-        } else if (bName.equalsIgnoreCase("taiga")) {
+        //} else if (bName.equalsIgnoreCase("taiga")) {
+            //biome = Biome.TAIGA;
+        } else if (bName.equalsIgnoreCase("taïga")) {
             biome = Biome.TAIGA;
-        } else if (bName.equalsIgnoreCase("desert")) {
+        //} else if (bName.equalsIgnoreCase("desert")) {
+            //biome = Biome.DESERT;
+        } else if (bName.equalsIgnoreCase("désert")) {
             biome = Biome.DESERT;
-        } else if (bName.equalsIgnoreCase("forest")) {
+        //} else if (bName.equalsIgnoreCase("forest")) {
+            //biome = Biome.FOREST;
+        } else if (bName.equalsIgnoreCase("forêt")) {
             biome = Biome.FOREST;
-        } else if (bName.equalsIgnoreCase("plains")) {
+        //} else if (bName.equalsIgnoreCase("plains")) {
+            //biome = Biome.PLAINS;
+        } else if (bName.equalsIgnoreCase("plaine")) {
             biome = Biome.PLAINS;
+        //} else if (bName.equalsIgnoreCase("extreme_hills")) {
+            //biome = Biome.EXTREME_HILLS;
         } else if (bName.equalsIgnoreCase("extreme_hills")) {
             biome = Biome.EXTREME_HILLS;
         } else {
@@ -1147,7 +1169,8 @@ public class uSkyBlock extends JavaPlugin implements uSkyBlockAPI {
                 clearPlayerInventory(player);
                 clearEntitiesNearPlayer(player);
             } catch (Exception ex) {
-                player.sendMessage(tr("Could not create your Island. Please contact a server moderator."));
+                player.sendMessage(tr("Une erreur est survenue lors de la création de votre île."));
+                player.sendMessage(tr("Merci de contacter un administrateur."));
                 log(Level.SEVERE, "Error creating island", ex);
                 return false;
             }

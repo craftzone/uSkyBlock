@@ -302,7 +302,7 @@ public class SkyBlockMenu {
         meta4 = menuItem.getItemMeta();
         String currentBiome = skyBlock.getCurrentBiome(player);
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.ocean", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Océan");
+            meta4.setDisplayName("§aBiome: Océan (OCEAN)");
             lores.add("§fLe biome océan est le biome");
             lores.add("§fbasique par défaut pour toutes les îles.");
             lores.add("§fLes animaux et les monstres");
@@ -313,7 +313,7 @@ public class SkyBlockMenu {
                 lores.add("§c\u27A1 §e§lCliquez pour changer en biome océan.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Océan");
+            meta4.setDisplayName("§8Biome: Océan (OCEAN)");
             lores.add("§cGrade Spécialiste et +.");
             lores.add("§fLe biome océan est le biome");
             lores.add("§fbasique par défaut pour toutes les îles.");
@@ -327,7 +327,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SAPLING, 1, (short) 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.forest", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Forêt");
+            meta4.setDisplayName("§aBiome: Forêt (FOREST");
             lores.add("§fLe biome forêt:");
             lores.add("§fLes animaux et les monstres");
             lores.add("§fspawn normalement.");
@@ -338,7 +338,7 @@ public class SkyBlockMenu {
                 lores.add("§c\u27A1 §e§lCliquez pour changer en biome forêt.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Forêt");
+            meta4.setDisplayName("§8Biome: Forêt (FOREST)");
             lores.add("§cGrade Spécialiste et +.");
             lores.add("§fLe biome forêt:");
             lores.add("§fLes animaux et les monstres");
@@ -352,7 +352,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SAND, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.desert", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Désert");
+            meta4.setDisplayName("§aBiome: Désert (DESERT)");
             lores.add("§fLe biome désert:");
             lores.add("§fIl n'y a pas de pluie ni de neige");
             lores.add("§fLes animaux ne spawn pas");
@@ -363,7 +363,7 @@ public class SkyBlockMenu {
                 lores.add("§c\u27A1 §e§lCliquez pour changer en biome désert.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Désert");
+            meta4.setDisplayName("§8Biome: Désert (DESERT)");
             lores.add("§cGrade Spécialiste et +.");
             lores.add("§fLe biome désert:");
             lores.add("§fIl n'y a pas de pluie ni de neige");
@@ -377,7 +377,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SAPLING, 1, (short) 3);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.jungle", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Jungle");
+            meta4.setDisplayName("§aBiome: Jungle (JUNGLE)");
             lores.add("§fLe biome jungle:");
             lores.add("§fBiome lumineux et coloré.");
             lores.add("§fLes animaux et les monstres");
@@ -389,7 +389,7 @@ public class SkyBlockMenu {
             	lores.add("§c\u27A1 §e§lCliquez pour changer en biome jungle.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Jungle");
+            meta4.setDisplayName("§8Biome: Jungle (JUNGLE)");
             lores.add("§cGrade Conseiller et +.");
             lores.add("§fLe biome jungle:");
             lores.add("§fBiome lumineux et coloré.");
@@ -404,7 +404,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.WATER_LILY, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.swampland", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Marais");
+            meta4.setDisplayName("§aBiome: Marais (SWAMPLAND)");
             lores.add("§fLe biome marais:");
             lores.add("§fBiome sombre et humide.");
             lores.add("§fLes animaux et les monstres");
@@ -417,7 +417,7 @@ public class SkyBlockMenu {
             	lores.add("§c\u27A1 §e§lCliquez pour changer en biome marais.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Marais");
+            meta4.setDisplayName("§8Biome: Marais (SWAMPLAND)");
             lores.add("§cGrade Conseiller et +.");
             lores.add("§fLe biome marais:");
             lores.add("§fBiome sombre et humide.");
@@ -433,7 +433,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.SNOW, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.taiga", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Taïga");
+            meta4.setDisplayName("§aBiome: Taïga (TAIGA)");
             lores.add("§fLe biome taïga:");
             lores.add("§fBiome avec de fortes chances de neige.");
             lores.add("§fLes animaux et les monstres");
@@ -445,7 +445,7 @@ public class SkyBlockMenu {
             	lores.add("§c\u27A1 §e§lCliquez pour changer en biome taïga.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Taïga");
+            meta4.setDisplayName("§8Biome: Taïga (TAIGA)");
             lores.add("§cGrade Conseiller et +.");
             lores.add("§fLe biome taïga:");
             lores.add("§fBiome avec de fortes chances de neige.");
@@ -460,7 +460,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.RED_MUSHROOM, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.mushroom", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Champignon");
+            meta4.setDisplayName("§aBiome: Champignon (MUSHROOM)");
             lores.add("§fLe biome champignon:");
             lores.add("§fBiome lumineux et coloré.");
             lores.add("§fLes mooshrooms sont les seuls");
@@ -473,7 +473,7 @@ public class SkyBlockMenu {
             	lores.add("§c\u27A1 §e§lCliquez pour changer en biome champignon.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Champignon");
+            meta4.setDisplayName("§8Biome: Champignon (MUSHROOM)");
             lores.add("§cGrade Expert et +.");
             lores.add("§fLe biome champignon:");
             lores.add("§fBiome lumineux et coloré.");
@@ -489,7 +489,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.NETHER_BRICK, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.hell", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: Nether");
+            meta4.setDisplayName("§aBiome: Nether (HELL)");
             lores.add("§fLe biome nether:");
             lores.add("§fbiome sombre et mort.");
             lores.add("§fIl n'y a pas de pluie ni de neige.");
@@ -501,7 +501,7 @@ public class SkyBlockMenu {
             	lores.add("§c\u27A1 §e§lCliquez pour changer en biome nether.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: Nether");
+            meta4.setDisplayName("§8Biome: Nether (HELL)");
             lores.add("§cGrade Expert et +.");
             lores.add("§fLe biome nether:");
             lores.add("§fbiome sombre et mort.");
@@ -516,7 +516,7 @@ public class SkyBlockMenu {
         menuItem = new ItemStack(Material.EYE_OF_ENDER, 1);
         meta4 = menuItem.getItemMeta();
         if (VaultHandler.checkPerk(player.getName(), "usb.biome.sky", player.getWorld())) {
-            meta4.setDisplayName("§aBiome: End");
+            meta4.setDisplayName("§aBiome: End (SKY)");
             lores.add("§fLe biome End:");
             lores.add("§fbiome avec un ciel sombre.");
             lores.add("§fSeul les endermen spawn");
@@ -527,7 +527,7 @@ public class SkyBlockMenu {
             	lores.add("§c\u27A1 §e§lCliquez pour changer en biome End.");
             }
         } else {
-            meta4.setDisplayName("§8Biome: End");
+            meta4.setDisplayName("§8Biome: End (SKY)");
             lores.add("§cGrade Expert et +.");
             lores.add("§fLe biome End:");
             lores.add("§fbiome avec un ciel sombre.");
